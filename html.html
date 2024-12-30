@@ -1,0 +1,125 @@
+<div>
+  <!--INICIO ZONA DE ESTILOS-->
+  <!--Bootstrap-->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+  <!-- Font-Awesome (Comentar en producción)-->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <!--Estilos personalizados-->
+  <link rel="stylesheet" href="./css.css" />
+  <!--FIN ZONA DE ESTILOS-->
+
+  <!--INICIO HTML EN SÍ-->
+  <div>
+    <!--Barra de herramientas-->
+    <div id="barra-herramientas" class="toolbar">
+      <!--Botones de colores-->
+      <div class="tool">
+        <button
+          class="color-tool active"
+          style="background-color: rgba(33, 33, 33, 1)"
+        ></button>
+        <button
+          class="color-tool"
+          style="background-color: rgba(255, 0, 0, 1)"
+        ></button>
+        <button
+          class="color-tool"
+          style="background-color: rgba(0, 0, 255, 1)"
+        ></button>
+      </div>
+      <!--Herramienta de lapiz-->
+      <div class="tool">
+        <button
+          id="pencil1"
+          class="tool-button active"
+          onclick="enablePencil1(event)"
+        >
+          <i class="fa fa-pencil" title="Pencil"></i>
+        </button>
+      </div>
+      <!--Herramienta de lapiz (Resaltador)-->
+      <div class="tool">
+        <button id="pencil2" class="tool-button" onclick="enablePencil2(event)">
+          <i class="fa fa-paint-brush" title="Highlighter"></i>
+        </button>
+      </div>
+      <!--Herramienta de añadir texto-->
+      <div class="tool">
+        <button id="text" class="tool-button" onclick="enableAddText(event)">
+          <i class="fa fa-font" title="Add Text"></i>
+        </button>
+      </div>
+      <!--Erase-->
+      <div class="tool">
+        <button
+          class="btn btn-danger btn-sm"
+          onclick="deleteSelectedObject(event)"
+        >
+          <i class="fa fa-eraser" title="Free Hand"></i>
+        </button>
+      </div>
+      <!-- Para guardar el pdf -->
+      <div class="tool">
+        <button class="btn btn-light btn-sm" onclick="savePDF()">
+          Guardar páginas
+        </button>
+      </div>
+    </div>
+    <!--Contenedor del Spinner de carga-->
+    <section id="loading-spinner" style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+      <div class="dots">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:15;"></span>
+      </div>
+    </section>
+    <!--Contenedor del pdf-->
+    <div id="pdf-container" style="max-height: 600px; overflow-y: auto; display: none;"></div>
+    <!--Visor por defecto para pantallas pequeñas-->
+    <iframe
+      src="https://drive.google.com/file/d/1IJWz5UCMh7D0XRVAEFhW91HCI6szHKhC/preview"
+      width="300"
+      height="500"
+      class="frame"
+    ></iframe>
+  </div>
+  <!--FIN HTML EN SÍ-->
+
+  <!--INICIO ZONA DE SCRIPTS-->
+  <!--JQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--PDF.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+  <!--Configuración del worker de PDF.js-->
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js";
+  </script>
+  <!--Fabric.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.3.0/fabric.min.js"></script>
+  <!--jsPDF-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.2.0/jspdf.umd.min.js"></script>->
+  <!--Scripts personalizados-->
+  <script src="./js2.js"></script>
+  <!--FIN ZONA DE SCRIPTS-->
+</div>
