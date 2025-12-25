@@ -243,7 +243,7 @@ if (window.innerWidth > 549) {
     this.font_size = size;
   };
 
-  //Función que permite guardar una sola página del pdf, la del último canvas activo
+  //Función que permite guardar las páginas del pdf seleccioandas
   PDFAnnotate.prototype.saveSinglePagePdf = function (startPage, endPage) {
     var current_PDFAnnotate = this;
 
